@@ -1,0 +1,34 @@
+﻿@model IEnumerable<ENTIDAD.Departamento>
+
+@{
+    ViewBag.Title = "Listado de Dapartamentos";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Departamentos</h2>
+
+<p>
+    @Html.ActionLink("Crear Departamento", "CrearDepartamento")
+</p>
+<table class="table">
+    <tr>
+        <th>
+           Nombre de Departamento
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NombreDepartamento)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "EditarDepartamento", new { id=item.DepartamentoId }) |
+            @Html.ActionLink("Detalles", "DetalleDepartamento", new { id=item.DepartamentoId }) |
+            @Html.ActionLink("Eliminar", "EliminarDepartamento  ", new { id=item.DepartamentoId })
+        </td>
+    </tr>
+}
+
+</table>

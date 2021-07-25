@@ -1,0 +1,16 @@
+E:\TutorialEnCapas\DEMO_ASP_MVC_CAPAS\DATOS\bin\Debug\DATOS.dll.config
+E:\TutorialEnCapas\DEMO_ASP_MVC_CAPAS\DATOS\bin\Debug\DATOS.dll
+E:\TutorialEnCapas\DEMO_ASP_MVC_CAPAS\DATOS\bin\Debug\DATOS.pdb
+E:\TutorialEnCapas\DEMO_ASP_MVC_CAPAS\DATOS\bin\Debug\ENTIDAD.dll
+E:\TutorialEnCapas\DEMO_ASP_MVC_CAPAS\DATOS\bin\Debug\EntityFramework.dll
+E:\TutorialEnCapas\DEMO_ASP_MVC_CAPAS\DATOS\bin\Debug\EntityFramework.SqlServer.dll
+E:\TutorialEnCapas\DEMO_ASP_MVC_CAPAS\DATOS\bin\Debug\ENTIDAD.pdb
+E:\TutorialEnCapas\DEMO_ASP_MVC_CAPAS\DATOS\bin\Debug\EntityFramework.xml
+E:\TutorialEnCapas\DEMO_ASP_MVC_CAPAS\DATOS\bin\Debug\EntityFramework.SqlServer.xml
+E:\TutorialEnCapas\DEMO_ASP_MVC_CAPAS\DATOS\bin\Debug\es\EntityFramework.resources.dll
+E:\TutorialEnCapas\DEMO_ASP_MVC_CAPAS\DATOS\bin\Debug\es\EntityFramework.SqlServer.resources.dll
+E:\TutorialEnCapas\DEMO_ASP_MVC_CAPAS\DATOS\obj\Debug\DATOS.csprojAssemblyReference.cache
+E:\TutorialEnCapas\DEMO_ASP_MVC_CAPAS\DATOS\obj\Debug\DATOS.csproj.CoreCompileInputs.cache
+E:\TutorialEnCapas\DEMO_ASP_MVC_CAPAS\DATOS\obj\Debug\DATOS.csproj.CopyComplete
+E:\TutorialEnCapas\DEMO_ASP_MVC_CAPAS\DATOS\obj\Debug\DATOS.dll
+E:\TutorialEnCapas\DEMO_ASP_MVC_CAPAS\DATOS\obj\Debug\DATOS.pdb

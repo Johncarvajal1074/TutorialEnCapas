@@ -1,0 +1,15 @@
+E:\TutorialEnCapas\DEMO_ASP_MVC_CAPAS\NEGOCIO\bin\Debug\NEGOCIO.dll
+E:\TutorialEnCapas\DEMO_ASP_MVC_CAPAS\NEGOCIO\bin\Debug\NEGOCIO.pdb
+E:\TutorialEnCapas\DEMO_ASP_MVC_CAPAS\NEGOCIO\bin\Debug\DATOS.dll
+E:\TutorialEnCapas\DEMO_ASP_MVC_CAPAS\NEGOCIO\bin\Debug\ENTIDAD.dll
+E:\TutorialEnCapas\DEMO_ASP_MVC_CAPAS\NEGOCIO\bin\Debug\EntityFramework.dll
+E:\TutorialEnCapas\DEMO_ASP_MVC_CAPAS\NEGOCIO\bin\Debug\DATOS.pdb
+E:\TutorialEnCapas\DEMO_ASP_MVC_CAPAS\NEGOCIO\bin\Debug\DATOS.dll.config
+E:\TutorialEnCapas\DEMO_ASP_MVC_CAPAS\NEGOCIO\bin\Debug\ENTIDAD.pdb
+E:\TutorialEnCapas\DEMO_ASP_MVC_CAPAS\NEGOCIO\bin\Debug\EntityFramework.xml
+E:\TutorialEnCapas\DEMO_ASP_MVC_CAPAS\NEGOCIO\bin\Debug\es\EntityFramework.resources.dll
+E:\TutorialEnCapas\DEMO_ASP_MVC_CAPAS\NEGOCIO\obj\Debug\NEGOCIO.csprojAssemblyReference.cache
+E:\TutorialEnCapas\DEMO_ASP_MVC_CAPAS\NEGOCIO\obj\Debug\NEGOCIO.csproj.CoreCompileInputs.cache
+E:\TutorialEnCapas\DEMO_ASP_MVC_CAPAS\NEGOCIO\obj\Debug\NEGOCIO.csproj.CopyComplete
+E:\TutorialEnCapas\DEMO_ASP_MVC_CAPAS\NEGOCIO\obj\Debug\NEGOCIO.dll
+E:\TutorialEnCapas\DEMO_ASP_MVC_CAPAS\NEGOCIO\obj\Debug\NEGOCIO.pdb

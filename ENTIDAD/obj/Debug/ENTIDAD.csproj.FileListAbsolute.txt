@@ -1,0 +1,6 @@
+E:\TutorialEnCapas\DEMO_ASP_MVC_CAPAS\ENTIDAD\bin\Debug\ENTIDAD.dll
+E:\TutorialEnCapas\DEMO_ASP_MVC_CAPAS\ENTIDAD\bin\Debug\ENTIDAD.pdb
+E:\TutorialEnCapas\DEMO_ASP_MVC_CAPAS\ENTIDAD\obj\Debug\ENTIDAD.csprojAssemblyReference.cache
+E:\TutorialEnCapas\DEMO_ASP_MVC_CAPAS\ENTIDAD\obj\Debug\ENTIDAD.csproj.CoreCompileInputs.cache
+E:\TutorialEnCapas\DEMO_ASP_MVC_CAPAS\ENTIDAD\obj\Debug\ENTIDAD.dll
+E:\TutorialEnCapas\DEMO_ASP_MVC_CAPAS\ENTIDAD\obj\Debug\ENTIDAD.pdb
