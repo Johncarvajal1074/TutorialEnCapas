@@ -1,46 +1,53 @@
 ﻿@model IEnumerable<ENTIDAD.Proyecto>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Proyectos";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<h2>Lista de Proyectos</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    <a class="btn btn-primary" href="@Url.Action("CrearProyecto", "Proyecto")">Crear Proyecto</a>
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.NombreProyecto)
+            Nombre de Proyecto
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.FechaInicio)
+            Fecha de Inicio
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.FechaFin)
+            Fecha Fin
         </th>
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.NombreProyecto)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.FechaInicio)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.FechaFin)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ProyectoId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ProyectoId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ProyectoId })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @item.NombreProyecto
+            </td>
+            <td>
+                @item.FechaInicio.ToShortDateString()
+            </td>
+            <td>
+                @item.FechaFin.ToShortDateString()
+            </td>
+            <td>
+                <a class="btn btn-primary btn-xs" title="Editar" href="@Url.Action("EditarProyecto", "Proyecto", new { id = item.ProyectoId})">
+                <i class="glyphicon glyphicon-edit"></i></a>
+
+                <a class="btn btn-info btn-xs" title="Detalles" href="@Url.Action("DetalleProyecto", "Proyecto", new { id = item.ProyectoId})"> 
+                <i class="glyphicon glyphicon-align-justify"></i></a>
+
+                <a class="btn btn-danger btn-xs" title="Eliminar" href="@Url.Action("EliminarProyecto", "Proyecto", new { id = item.ProyectoId})"> 
+                <i class="glyphicon glyphicon-trash"></i></a>
+
+            </td>
+        </tr>
+    }
 
 </table>

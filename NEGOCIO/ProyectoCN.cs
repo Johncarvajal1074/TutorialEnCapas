@@ -11,8 +11,13 @@ namespace NEGOCIO
     public class ProyectoCN
     {
         public static ProyectoDALC obj = new ProyectoDALC();
-        
-        public static List<Proyecto> ListarProyectos()
+
+        public static void CrearProyecto(Proyecto _proyecto)
+        {
+            obj.CrearProyecto(_proyecto);
+        }
+
+            public static List<Proyecto> ListarProyectos()
         {
             return obj.ListarProyectos();
         }
