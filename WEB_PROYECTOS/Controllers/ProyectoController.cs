@@ -39,14 +39,15 @@ namespace WEB_PROYECTOS.Controllers
             try
             {
                 if (_proyecto.NombreProyecto == null)
-                {
+                {                    
                     return Json(new { ok = false, msg = "Debe ingresar el nombre del proyecto" }, JsonRequestBehavior.AllowGet);
                 }
                 else
                 {
                 ProyectoCN.CrearProyecto(_proyecto);
-                return Json(new { ok = true, toRedirect = "Index"}, JsonRequestBehavior.AllowGet);
-                //return RedirectToAction("Index");
+                    
+                    return Json(new { ok = true, toRedirect = "Index" }, JsonRequestBehavior.AllowGet);
+                    //return RedirectToAction("Index");
 
                 }
             }

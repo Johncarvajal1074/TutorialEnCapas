@@ -68,8 +68,8 @@
                 console.log(response);
                 if (response.ok) {
                     //alert("Proyecto creado correctamente");
-                    window.Location = response.toRedirect;
-                    location = @Url.Action("Index","Proyecto");
+                    location.href = response.toRedirect;
+                    
                 } else {
                     alert(response.msg);
                 }
