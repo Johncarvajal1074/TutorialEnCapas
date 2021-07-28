@@ -5,46 +5,46 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-    <form action="@Url.Action("CrearProyecto", "Proyecto")" method="post" id="frmCrearProyecto">
+<form action="@Url.Action("CrearProyecto", "Proyecto")" method="post" id="frmCrearProyecto">
 
-        @Html.AntiForgeryToken()
+    @Html.AntiForgeryToken()
 
-        <div class="form-horizontal">
-            <h4>Crear Nuevo Proyecto</h4>
-            <hr />
-            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-            <div class="form-group">
-                <label class="control-label col-md-2">Nombre Proyecto</label>
-                <div class="col-md-10">
-                    <input type="text" class="form-control" id="NombreProyecto" name="NombreProyecto" />
-                    @Html.ValidationMessageFor(model => model.NombreProyecto, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label class="control-label col-md-2">Fecha Inicio</label>
-                <div class="col-md-10">
-                    @*se recomienda usar zebra datepicker para campos fecha*@
-                    <input type="date" class="form-control" id="FechaInicio" name="FechaInicio" />
-                    @Html.ValidationMessageFor(model => model.FechaInicio, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label class="control-label col-md-2">Fecha Fin</label>
-                <div class="col-md-10">
-                    <input type="date" class="form-control" id="FechaFin" name="FechaFin" />
-                    @Html.ValidationMessageFor(model => model.FechaFin, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" value="Crear" class="btn btn-default" />
-                </div>
+    <div class="form-horizontal">
+        <h4>Crear Nuevo Proyecto</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            <label class="control-label col-md-2">Nombre Proyecto</label>
+            <div class="col-md-10">
+                <input type="text" class="form-control" id="NombreProyecto" name="NombreProyecto" />
+                @Html.ValidationMessageFor(model => model.NombreProyecto, "", new { @class = "text-danger" })
             </div>
         </div>
-    </form>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Fecha Inicio</label>
+            <div class="col-md-10">
+                @*se recomienda usar zebra datepicker para campos fecha*@
+                <input type="date" class="form-control" id="FechaInicio" name="FechaInicio" />
+                @Html.ValidationMessageFor(model => model.FechaInicio, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Fecha Fin</label>
+            <div class="col-md-10">
+                <input type="date" class="form-control" id="FechaFin" name="FechaFin" />
+                @Html.ValidationMessageFor(model => model.FechaFin, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Crear" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</form>
 
 <div>
     @Html.ActionLink("Regresar", "Index")
@@ -56,35 +56,61 @@
     <script>
         $("#frmCrearProyecto").submit(function (event) {
             event.preventDefault(); //evita que la pagina se recargue
+
+            let nombreProyecto = $("#NombreProyecto").val();
+            let fechaInicio = $("#FechaInicio").val();
+            let fechaFin = $("#FechaFin").val();
+
+            if ($.trim(nombreProyecto) == "") {
+                alert("Debe ingresar nombre proyecto");
+                return;
+            }
+
+            if (fechaInicio == "" || fechaFin == "") {
+                alert("Debe ingresar ambas fechas");
+                return;
+            }
+
+            if (ValidarFechas(fechaInicio, fechaFin)) {
+                alert("la fecha fin no puede ser mayor que la fecha inicio");
+                return;
+            }
+
             var post_url = $(this).attr("action");
             var request_method = $(this).attr("method");
             var form_data = $(this).serializeArray();
             console.log(form_data);
+            LoadingOverlayShow("#frmCrearProyecto");
             $.ajax({
                 url: post_url,
                 type: request_method,
                 data: form_data
             }).done(function (response) {
                 console.log(response);
+                LoadingOverlayHide("#frmCrearProyecto");
                 if (response.ok) {
                     //alert("Proyecto creado correctamente");
                     location.href = response.toRedirect;
-                    
+
                 } else {
                     alert(response.msg);
                 }
-               
+
             }).fail(function (jqXHR, textStatus, errorThrown) {
+                LoadingOverlayHide("#frmCrearProyecto");
                 /*objeto jqXHR: es un objeto que contiene todos los datos de la solicitud ajax realizada,
                     incluyendo la propiedad jqXHR.status que entre otros trae el codigo estado HTTP de la respuesta.
 
                   string textStatus: texto que describe el tipo de error, que puede ser (null, abort, timeout, NO transport, parseerror.)
-   
+
                   string errorThrown: si hay un error HTTP, errorThrown contiene el texto de la cabecera HTTP de estado.
                    ejemplo para un error 404 es (Not found) y para un 500 es (Internal Server Error).
                 */
 
             });
         });
+
+
     </script>
+
 }

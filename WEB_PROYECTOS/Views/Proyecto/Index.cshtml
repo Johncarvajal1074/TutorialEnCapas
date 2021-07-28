@@ -5,49 +5,67 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+
 <h2>Lista de Proyectos</h2>
 
 <p>
     <a class="btn btn-primary" href="@Url.Action("CrearProyecto", "Proyecto")">Crear Proyecto</a>
 </p>
-<table class="table">
-    <tr>
-        <th>
-            Nombre de Proyecto
-        </th>
-        <th>
-            Fecha de Inicio
-        </th>
-        <th>
-            Fecha Fin
-        </th>
-        <th></th>
-    </tr>
-
-    @foreach (var item in Model)
-    {
+<table class="table" id="tablaDemo">
+    <thead>
         <tr>
-            <td>
-                @item.NombreProyecto
-            </td>
-            <td>
-                @item.FechaInicio.ToShortDateString()
-            </td>
-            <td>
-                @item.FechaFin.ToShortDateString()
-            </td>
-            <td>
-                <a class="btn btn-primary btn-xs" title="Editar" href="@Url.Action("EditarProyecto", "Proyecto", new { id = item.ProyectoId})">
-                <i class="glyphicon glyphicon-edit"></i></a>
-
-                <a class="btn btn-info btn-xs" title="Detalles" href="@Url.Action("DetalleProyecto", "Proyecto", new { id = item.ProyectoId})"> 
-                <i class="glyphicon glyphicon-align-justify"></i></a>
-
-                <a class="btn btn-danger btn-xs" title="Eliminar" href="@Url.Action("EliminarProyecto", "Proyecto", new { id = item.ProyectoId})"> 
-                <i class="glyphicon glyphicon-trash"></i></a>
-
-            </td>
+            <th>
+                Nombre de Proyecto
+            </th>
+            <th>
+                Fecha de Inicio
+            </th>
+            <th>
+                Fecha Fin
+            </th>
+            <th></th>
         </tr>
-    }
+
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @item.NombreProyecto
+                </td>
+                <td>
+                    @item.FechaInicio.ToShortDateString()
+                </td>
+                <td>
+                    @item.FechaFin.ToShortDateString()
+                </td>
+                <td>
+                    <a class="btn btn-primary btn-xs" title="Editar" href="@Url.Action("EditarProyecto", "Proyecto", new { id = item.ProyectoId})">
+                        <i class="glyphicon glyphicon-edit"></i>
+                    </a>
+
+                    <a class="btn btn-info btn-xs" title="Detalles" href="@Url.Action("DetalleProyecto", "Proyecto", new { id = item.ProyectoId})">
+                        <i class="glyphicon glyphicon-align-justify"></i>
+                    </a>
+
+                    <a class="btn btn-danger btn-xs" title="Eliminar" href="@Url.Action("EliminarProyecto", "Proyecto", new { id = item.ProyectoId})">
+                        <i class="glyphicon glyphicon-trash"></i>
+                    </a>
+
+                </td>
+            </tr>
+        }
+
+    </tbody>
 
 </table>
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            $('#tablaDemo').DataTable();
+        });
+    </script>
+}

@@ -44,6 +44,7 @@ namespace WEB_PROYECTOS.Controllers
                 }
                 else
                 {
+                    
                 ProyectoCN.CrearProyecto(_proyecto);
                     
                     return Json(new { ok = true, toRedirect = "Index" }, JsonRequestBehavior.AllowGet);
